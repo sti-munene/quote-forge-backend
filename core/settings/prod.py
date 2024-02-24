@@ -12,7 +12,7 @@ DATABASES = {
 }
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
