@@ -1,0 +1,12 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Statement1",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": ["s3:List*", "s3:Get*"],
+      "Resource": ["arn:aws:s3:::quote-forge", "arn:aws:s3:::quote-forge/*"]
+    }
+  ]
+}
