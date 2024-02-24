@@ -1,4 +1,4 @@
-# Django Next Auth
+# Quote Forge Backend
 
 Welcome to Quote Forge, your go-to tool for seamlessly crafting and managing quotes for your business.
 This backend is built using Django. Create, customize, and organize business quotes with ease.
