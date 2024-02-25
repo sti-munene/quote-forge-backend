@@ -5,6 +5,8 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 CORS_ALLOW_ALL_ORIGINS = True
 
+ALLOWED_HOSTS = []
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
