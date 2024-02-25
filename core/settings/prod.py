@@ -24,6 +24,10 @@ ALLOWED_HOSTS = [
     'quote-forge-backend.up.railway.app'
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://quote-forge-backend.up.railway.app'
+]
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
