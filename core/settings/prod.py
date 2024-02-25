@@ -20,13 +20,37 @@ CORS_ALLOWED_ORIGINS = [
     "https://quote-forge-frontend.vercel.app",
 ]
 
+CORS_ALLOW_CREDENTIALS = False
+
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]
+
 ALLOWED_HOSTS = [
     'localhost',
     'quote-forge-backend.up.railway.app'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://quote-forge-backend.up.railway.app'
+    'https://quote-forge-backend.up.railway.app',
+    "https://quote-forge-frontend.vercel.app",
 ]
 
 MIDDLEWARE = [
