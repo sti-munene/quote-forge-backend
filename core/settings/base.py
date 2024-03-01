@@ -28,7 +28,8 @@ INSTALLED_APPS = [
     "dj_rest_auth.registration",
     "corsheaders",
     "allauth.socialaccount.providers.google",
-    'storages'
+    'storages',
+    'quotations' 
 ]
 
 ROOT_URLCONF = "core.urls"

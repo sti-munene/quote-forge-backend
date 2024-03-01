@@ -42,28 +42,3 @@ class Customer(models.Model):
     
     def __str__(self):
         return f'{self.name}'
-
-
-class Quotation(models.Model):
-    title = models.CharField(max_length=128)
-    business = models.ForeignKey(Business, on_delete=models.CASCADE)
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    created_on = models.DateTimeField(auto_now_add=True)
-    last_modified = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return f'{self.business.name}'
-    
-    class Meta:
-        ordering = ['-last_modified']
-
-
-class LineItem(models.Model):
-    quotation = models.ForeignKey(Quotation, on_delete=models.CASCADE, related_name='line_items')
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    quantity = models.PositiveIntegerField(default=1)
-    created_on = models.DateTimeField(auto_now_add=True)
-    last_modified = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return f'{self.created_on}'
