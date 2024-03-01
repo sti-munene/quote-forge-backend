@@ -15,18 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
 from rest_framework import routers
-from business.views import ProductViewSet, QuotationViewSet, CustomerViewSet
+from business.views import ProductViewSet, CustomerViewSet
 
 router = routers.DefaultRouter()
 router.register(r"api/products", ProductViewSet, basename="products")
 router.register(r"api/customers", CustomerViewSet, basename="customers")
-router.register(r"api/quotations", QuotationViewSet, basename="quotations")
-# router.register(r"api/business", BusinessViewSet, basename="business")
 
 urlpatterns = [
     path("", include(router.urls)),
     path('api/auth/', include('authentication.urls')),
     path("api/business/", include("business.urls")),
+    path("api/quotations/", include("quotations.urls")),
     path("admin/", admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
